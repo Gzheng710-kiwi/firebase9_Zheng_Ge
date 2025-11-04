@@ -1,6 +1,12 @@
 import { db } from "./firebaseConfig.js";
-import { doc, getDoc } from "firebase/firestore";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
 
 // Get the document ID from the URL
 function getDocIdFromUrl() {
@@ -50,6 +56,8 @@ function saveHikeDocumentIDAndRedirect() {
   // Redirect to the review page
   window.location.href = "review.html";
 }
+displayHikeInfo();
+
 async function populateReviews() {
   console.log("test");
   const hikeCardTemplate = document.getElementById("reviewCardTemplate");
@@ -126,5 +134,3 @@ async function populateReviews() {
 
 // Run it
 populateReviews();
-
-displayHikeInfo();
